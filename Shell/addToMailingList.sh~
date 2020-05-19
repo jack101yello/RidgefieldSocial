@@ -1,0 +1,7 @@
+#/bin/bash
+cd ..
+echo "The current position is: `pwd`"
+email=$( cat users.txt | grep $1 | cut -d ',' -f 3 )
+cd Shell
+cat mailingList.txt | grep -v "${email}" > mailingList.txt
+echo "${email}" >> mailingList.txt

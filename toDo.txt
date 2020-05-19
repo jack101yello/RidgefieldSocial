@@ -1,0 +1,2 @@
+- Write settings page (including subscribing to emails)
+- Write schedule page and program to overwrite their schedule

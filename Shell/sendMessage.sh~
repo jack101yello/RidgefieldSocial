@@ -1,0 +1,12 @@
+#/bin/bash
+# Parameters: target address, subject line, message
+
+sendAddress="jackhudson@ridgefieldps.net"
+sendPassword="Jack55101"
+
+echo "Target address: ${1}"
+echo "Subject line: ${2}"
+echo "Message: ${3}"
+echo "Sending message..."
+
+curl --url 'smtps://smtp.gmail.com:465' --ssl-reqd --mail-from "${sendAddress}" --mail-rcpt "${1}" --user "${sendAddress}:${sendPassword}" -T <(echo -e 'From: ${sendAddress}\nTo: ${1}\nSubject: ${2}\n\n${3}') # Sends the message

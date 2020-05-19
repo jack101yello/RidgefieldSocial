@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <ul>
+      <li><a href="homepage.php">Homepage</a></li>
+      <li class="active"><a href="post.html">Post</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="settings.html">Settings</a></li>
+    </ul>
+    <!-- Post form -->
+    <h3>What would you like to post?</h3>
+    <h6>(Please note that only the last 5 posts are stored, and that everyone can see any post. However, all post are anonymous.)</h6>
+    <form action="post.php" method="post">
+      <input type="text" name="postContents"><br>
+      <input type="submit">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <ul> <!-- menu bar -->
+      <li><a href="homepage.php">Homepage</a></li>
+      <li><a href="post.html">Post</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="news.html">News</a></li>
+      <li class="active"><a href="settings.html">Settings</a></li>
+    </ul>
+    <p>Please sign in again before changing any settings.</p>
+    <form action="settings.php" method="post">
+      Username: <input type="text" name="username"><br>
+      Password: <input type="password" name="password"><br>
+      Subscribe to class alerts?<br>
+      <input type="radio" id="Yes" name="subscription" value="yes">
+      <label for="Yes">Yes</label><br>
+      <input type="radio" id="No" name="subscription" value="no">
+      <label for="No">No</label><br>
+      <input type="submit">
+    </form>
+  </body>
+</html>
