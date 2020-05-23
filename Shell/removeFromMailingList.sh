@@ -1,3 +1,3 @@
 #/bin/bash
 email=$( cat users.txt | grep $1 | cut -d ',' -f 3 )
-cat Shell/mailingList.txt | grep -v "${email}" > Shell/mailingList.txt
+cat Shell/mailingListDB.txt | grep -v "${email}" > Shell/mailingListDB.txt

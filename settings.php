@@ -12,12 +12,14 @@ if (strcmp(trim($_POST["password"]),trim($correctPassword)) == 0)
 
 $usernameFile="usernameFile.txt"; $usernameFileLink=fopen($usernameFile,'w') or die ("Unable to validate credentials");
 fwrite($usernameFileLink,$_POST["username"]); fclose($usernameFileLink);
-echo "Settings changed";
 
 if (strcmp($_POST["subscription"],"yes") == 0)
 {
-shell_exec("./Shell/addToMailingList.sh `cat usernameFile.txt`");
-echo "Adding user";
+shell_exec("./Shell/addToMailingList.sh $(cat usernameFile.txt)");
+$mailingListFile="Shell/mailingList.txt"; $mailingListFileLink=fopen($mailingListFile,'r') or die ("Unable to access mailing list");
+$mailingListContents=fread($mailingListFileLink,filesize($mailingListFile)); fclose($mailingListFileLink);
+$mailingListDB="Shell/mailingListDB.txt"; $mailingListDBLink=fopen($mailingListDB,'a') or die ("Unable to write to mailing list");
+fwrite($mailingListDBLink,$mailingListContents); fclose($mailingListDBLink);
 }
 else
 {
