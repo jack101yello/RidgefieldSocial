@@ -1,2 +1,3 @@
-- Write settings page (including subscribing to emails)
 - Write schedule page and program to overwrite their schedule
+- Write email sending program
+- Figure out how to host non-locally
